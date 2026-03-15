@@ -8,10 +8,10 @@ const defaultBackdropClassName =
   "fixed inset-0 z-50 bg-black/50 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0";
 
 const defaultViewportClassName =
-  "fixed inset-0 z-50 flex items-center justify-center p-4";
+  "fixed inset-0 z-[100] flex items-start justify-center overflow-hidden p-4 sm:items-center";
 
 const defaultPopupClassName = cn(
-  "flex max-h-[90vh] w-full max-w-md flex-col overflow-hidden rounded-xl border border-[#E9EAEB] bg-white p-6 shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)]",
+  "flex max-h-[min(90vh,calc(100vh-2rem))] w-full min-w-0 max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-xl border border-[#E9EAEB] bg-white p-4 shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] sm:max-w-md sm:p-6",
   "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
 );
 

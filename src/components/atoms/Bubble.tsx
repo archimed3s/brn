@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import { cn } from "@/lib/utils";
 
 export const Bubble = ({ variant, children, className }: BubbleProps) => (
@@ -16,6 +18,6 @@ export const Bubble = ({ variant, children, className }: BubbleProps) => (
 
 type BubbleProps = {
   variant: "assistant" | "user";
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 };

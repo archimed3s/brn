@@ -2,6 +2,7 @@
 
 import { Select } from "@base-ui/react/select";
 import { Check } from "lucide-react";
+import type { ReactNode } from "react";
 import * as React from "react";
 
 import { Label } from "@/components/atoms/Label";
@@ -20,7 +21,7 @@ const multiselectTriggerVariants = cn(
 const renderMultiselectValue = (
   val: number[] | number | null,
   placeholder: string,
-): React.ReactNode => {
+): ReactNode => {
   const arr = Array.isArray(val) ? val : val == null ? [] : [val];
   if (arr.length === 0) {
     return (
@@ -97,8 +98,8 @@ const Multiselect = ({
           </Select.Icon>
         </Select.Trigger>
         <Select.Portal>
-          <Select.Backdrop className="fixed inset-0 z-40 bg-transparent" />
-          <Select.Positioner className="z-50">
+          <Select.Backdrop className="fixed inset-0 z-[110] bg-transparent" />
+          <Select.Positioner className="z-[110]">
             <Select.Popup
               className={cn(
                 "max-h-60 w-[var(--trigger-width)] overflow-auto rounded-lg border border-[#D0D5DD] bg-white p-1 shadow-lg",

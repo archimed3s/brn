@@ -162,7 +162,7 @@ export const UploadDocumentModal = ({
           <Dialog.Popup
             aria-labelledby={UPLOAD_DOCUMENT_MODAL_TITLE_ID}
             aria-describedby={UPLOAD_DOCUMENT_MODAL_DESC_ID}
-            className="w-[640px] max-w-[calc(100vw-2rem)]"
+            className="w-full max-w-[calc(100vw-2rem)] sm:w-[640px] sm:max-w-[640px]"
           >
             <div className="relative flex min-h-0 flex-1 flex-col overflow-hidden">
               <section className="shrink-0" aria-label="Upload document header">

@@ -7,11 +7,6 @@ import {
   getCategoryAndDescendantIds,
 } from "@/lib/categories";
 
-export type UseDocumentCountOptions = {
-  byParent?: boolean;
-  includeSubcategories?: boolean;
-};
-
 const countByCategory = (
   items: { category_id?: number }[],
   categoryId: number | null,
@@ -65,4 +60,9 @@ export const useDocumentCount = (
     error,
     isSuccess,
   };
+};
+
+export type UseDocumentCountOptions = {
+  byParent?: boolean;
+  includeSubcategories?: boolean;
 };

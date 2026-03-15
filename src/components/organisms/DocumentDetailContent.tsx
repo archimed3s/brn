@@ -83,25 +83,32 @@ export const DocumentDetailContent = () => {
 
   return (
     <ContentPanelLayout>
-      <section className="shrink-0 p-6" aria-label="Document header">
-        <div className="flex flex-wrap items-center justify-between gap-3">
+      <section
+        className="flex shrink-0 flex-col gap-3 p-4 lg:gap-4 lg:p-6"
+        aria-label="Document header"
+      >
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
           <StrategyBreadcrumb segments={breadcrumbSegments} />
           <Button
             type="button"
             variant="outline"
             size="default"
-            className="shrink-0 gap-2 rounded-lg border-[#D0D5DD] bg-white shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] hover:border-[#98A2B3] hover:bg-[#F2F4F7]"
+            className="w-full shrink-0 gap-2 rounded-lg border-[#D0D5DD] bg-white shadow-[0px_1px_2px_0px_rgba(16,24,40,0.05)] hover:border-[#98A2B3] hover:bg-[#F2F4F7] sm:w-auto"
           >
             <FileCode2 className="size-5 text-[#344054]" />
             Edit with Bruno
           </Button>
         </div>
-        <Text variant="heading" as="h1" className="text-[#0D1017]">
+        <Text
+          variant="heading"
+          as="h1"
+          className="break-words text-[#0D1017] lg:text-2xl"
+        >
           {doc.name}
         </Text>
       </section>
       <section
-        className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden p-6 pt-0"
+        className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden p-4 pt-0 lg:p-6 lg:pt-0"
         aria-label="Document content"
       >
         <div className="flex flex-col gap-6">

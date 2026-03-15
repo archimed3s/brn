@@ -9,12 +9,6 @@ import { Radio } from "@/components/atoms/Radio";
 import { Select } from "@/components/atoms/Select";
 import { Text } from "@/components/atoms/Text";
 
-export type AddCategoryFormValues = {
-  type: "main" | "sub";
-  parentId: string;
-  name: string;
-};
-
 export const AddCategoryForm = ({
   values,
   onValuesChange,
@@ -137,6 +131,12 @@ export const AddCategoryForm = ({
       </div>
     </form>
   );
+};
+
+export type AddCategoryFormValues = {
+  type: "main" | "sub";
+  parentId: string;
+  name: string;
 };
 
 type AddCategoryFormProps = {

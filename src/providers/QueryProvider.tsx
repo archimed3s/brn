@@ -6,11 +6,19 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
+import dynamic from "next/dynamic";
+import type { ReactNode } from "react";
 import * as React from "react";
 
 const ReactQueryDevtools =
   process.env.NODE_ENV === "development"
-    ? require("@tanstack/react-query-devtools").ReactQueryDevtools
+    ? dynamic(
+        () =>
+          import("@tanstack/react-query-devtools").then(
+            (m) => m.ReactQueryDevtools,
+          ),
+        { ssr: false },
+      )
     : () => null;
 
 const makeQueryClient = () =>
@@ -26,11 +34,6 @@ const getQueryClient = (): QueryClient => {
   if (typeof window === "undefined") return makeQueryClient();
   if (!browserQueryClient) browserQueryClient = makeQueryClient();
   return browserQueryClient;
-};
-
-export type QueryProviderProps = {
-  children: React.ReactNode;
-  dehydratedState?: DehydratedState;
 };
 
 export const QueryProvider = ({
@@ -54,4 +57,9 @@ export const QueryProvider = ({
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
+};
+
+export type QueryProviderProps = {
+  children: ReactNode;
+  dehydratedState?: DehydratedState;
 };

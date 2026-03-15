@@ -34,6 +34,8 @@ Lighthouse scores (Performance, Accessibility, Best Practices, SEO at 100):
 
    Edit `.env.local` and set `API_BASE_URL` (no trailing slash).
 
+   **Optional:** Vercel Analytics and Speed Insights run only on Vercel by default (when `VERCEL=1`). To enable them locally, set `NEXT_PUBLIC_VERCEL_ANALYTICS=true`. To disable them on Vercel, set `NEXT_PUBLIC_VERCEL_ANALYTICS=false` in the project’s Vercel environment.
+
 3. Run the dev server:
 
    ```bash

@@ -120,10 +120,11 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground font-sans;
-  }
   html {
     @apply font-sans;
+    min-width: 320px;
+  }
+  body {
+    @apply bg-background text-foreground font-sans overflow-x-hidden;
   }
 }

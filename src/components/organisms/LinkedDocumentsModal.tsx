@@ -41,10 +41,7 @@ export const LinkedDocumentsModal = ({
       <Dialog.Portal>
         <Dialog.Backdrop />
         <Dialog.Viewport>
-          <Dialog.Popup
-            aria-labelledby={LINKED_DOCUMENTS_MODAL_TITLE_ID}
-            className="max-w-md"
-          >
+          <Dialog.Popup aria-labelledby={LINKED_DOCUMENTS_MODAL_TITLE_ID}>
             <div className="relative flex flex-col gap-5">
               <Dialog.Close
                 render={

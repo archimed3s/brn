@@ -79,12 +79,12 @@ export const CategoriesPanel = () => {
   }));
 
   const panelContent = (
-    <div className="flex min-h-0 flex-1 flex-col rounded-xl border border-border bg-card shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]">
+    <div className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden rounded-none border-0 border-border bg-card shadow-none lg:rounded-xl lg:border lg:shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]">
       <div className="flex shrink-0 flex-col px-4 pt-5">
         <CategoriesPanelHeader onAddClick={handleOpenAddModal} />
         <Divider className="my-2" aria-hidden />
       </div>
-      <div className="min-h-0 flex-1 overflow-y-auto px-4 pb-5">
+      <div className="min-h-0 min-w-0 flex-1 overflow-y-auto overflow-x-hidden px-4 pb-5">
         {isLoading ? (
           <CategoriesPanelSkeleton />
         ) : isError ? (
@@ -148,7 +148,7 @@ export const CategoriesPanel = () => {
   );
 
   return (
-    <div className="flex h-full min-h-0 w-[280px] shrink-0 flex-col">
+    <div className="flex h-full min-h-0 w-full min-w-0 shrink-0 flex-col overflow-hidden lg:w-[280px]">
       <AddNewCategoryModal
         open={addModalOpen}
         onOpenChange={setAddModalOpen}

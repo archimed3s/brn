@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import { Button } from "@/components/atoms/Button";
 import { Text } from "@/components/atoms/Text";
 
@@ -21,7 +23,7 @@ export const IconLabelButton = ({
 );
 
 type IconLabelButtonProps = {
-  icon: React.ReactNode;
-  children: React.ReactNode;
+  icon: ReactNode;
+  children: ReactNode;
   onClick?: () => void;
 };

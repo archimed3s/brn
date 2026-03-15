@@ -1,10 +1,11 @@
 import { dehydrate, QueryClient } from "@tanstack/react-query";
-import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
+import type { ReactNode } from "react";
 import { prefetchDocumentCategories } from "@/lib/prefetch-document-categories";
 import { QueryProvider } from "@/providers/QueryProvider";
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/next';
 
 import "./globals.css";
 
@@ -25,9 +26,21 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const includeVercelAnalytics =
+  process.env.NEXT_PUBLIC_VERCEL_ANALYTICS === "true" ||
+  (process.env.VERCEL === "1" &&
+    process.env.NEXT_PUBLIC_VERCEL_ANALYTICS !== "false");
+
 export const metadata: Metadata = {
   title: "brn",
   description: "Document and category management with chat",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  minimumScale: 1,
+  maximumScale: 5,
 };
 
 const RootLayout = async ({ children }: RootLayoutProps) => {
@@ -45,13 +58,17 @@ const RootLayout = async ({ children }: RootLayoutProps) => {
         <QueryProvider dehydratedState={dehydratedState}>
           {children}
         </QueryProvider>
-        <Analytics />
-        <SpeedInsights />
+        {includeVercelAnalytics ? (
+          <>
+            <Analytics />
+            <SpeedInsights />
+          </>
+        ) : null}
       </body>
     </html>
   );
 };
 
-type RootLayoutProps = Readonly<{ children: React.ReactNode }>;
+type RootLayoutProps = Readonly<{ children: ReactNode }>;
 
 export default RootLayout;

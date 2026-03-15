@@ -1,13 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { documentsKey } from "@/hooks/useDocuments";
 
-export type UploadDocumentPayload = {
-  name: string;
-  category_id: number;
-  tags: string[];
-  file: File;
-};
-
 const uploadDocument = async (
   payload: UploadDocumentPayload,
 ): Promise<unknown> => {
@@ -44,4 +37,11 @@ export const useUploadDocument = () => {
       queryClient.invalidateQueries({ queryKey: documentsKey });
     },
   });
+};
+
+export type UploadDocumentPayload = {
+  name: string;
+  category_id: number;
+  tags: string[];
+  file: File;
 };

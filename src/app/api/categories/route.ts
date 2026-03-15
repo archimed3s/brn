@@ -11,13 +11,6 @@ const DOCUMENT_CATEGORIES_PATH = "/api/v1/conversation/document-categories";
 
 export type { DocumentCategory };
 
-export type CreateDocumentCategoryBody = {
-  name: string;
-  user_id: string;
-  description: string;
-  parent_id: number | null;
-};
-
 export const GET = async (request: Request) => {
   const { baseUrl, headers } = getBackendConfig(request);
 
@@ -117,4 +110,11 @@ export const POST = async (request: Request) => {
   } catch (err) {
     return backendUnreachableResponse(err);
   }
+};
+
+export type CreateDocumentCategoryBody = {
+  name: string;
+  user_id: string;
+  description: string;
+  parent_id: number | null;
 };

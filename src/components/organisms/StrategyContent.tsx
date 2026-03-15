@@ -101,9 +101,16 @@ export const StrategyContent = () => {
 
   return (
     <ContentPanelLayout>
-      <section className="shrink-0 p-6" aria-label="Strategy header">
+      <section
+        className="flex shrink-0 flex-col gap-3 p-4 lg:gap-4 lg:p-6"
+        aria-label="Strategy header"
+      >
         <StrategyBreadcrumb segments={segments} />
-        <Text variant="heading" as="h1" className="text-[#0D1017]">
+        <Text
+          variant="heading"
+          as="h1"
+          className="break-words text-[#0D1017] lg:text-2xl"
+        >
           {title}
         </Text>
         <StrategyFilters
@@ -114,7 +121,7 @@ export const StrategyContent = () => {
         />
       </section>
       <section
-        className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden p-6 pt-0"
+        className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden p-4 pt-0 lg:p-6 lg:pt-0"
         aria-label="Documents list"
       >
         <div className="flex flex-col gap-4">
@@ -128,7 +135,10 @@ export const StrategyContent = () => {
           />
         </div>
       </section>
-      <section className="shrink-0 p-6 pt-0" aria-label="Strategy footer">
+      <section
+        className="shrink-0 p-4 pt-0 lg:p-6"
+        aria-label="Strategy footer"
+      >
         <div className="h-px w-full bg-[#EAECF0]" />
         <StrategyNextBar label="Continuation Patterns" />
       </section>

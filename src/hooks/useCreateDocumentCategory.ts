@@ -2,13 +2,6 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { documentCategoriesKey } from "@/hooks/useDocumentCategories";
 import type { DocumentCategory } from "@/lib/categories";
 
-export type CreateDocumentCategoryPayload = {
-  name: string;
-  user_id: string;
-  description: string;
-  parent_id: number | null;
-};
-
 const createDocumentCategory = async (
   payload: CreateDocumentCategoryPayload,
 ): Promise<DocumentCategory> => {
@@ -39,4 +32,11 @@ export const useCreateDocumentCategory = () => {
       queryClient.invalidateQueries({ queryKey: documentCategoriesKey });
     },
   });
+};
+
+export type CreateDocumentCategoryPayload = {
+  name: string;
+  user_id: string;
+  description: string;
+  parent_id: number | null;
 };

@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import * as React from "react";
 
 import { Button } from "@/components/atoms/Button";
@@ -87,7 +88,7 @@ export type CategoryRowProps = {
   countByParent?: boolean;
   includeSubcategories?: boolean;
   expanded: boolean;
-  icon?: React.ReactNode;
-  children?: React.ReactNode;
+  icon?: ReactNode;
+  children?: ReactNode;
   onToggle?: (open: boolean) => void;
 };

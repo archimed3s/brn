@@ -1,6 +1,7 @@
 "use client";
 
 import { ChevronDown, ChevronUp } from "lucide-react";
+import type { ReactNode } from "react";
 import * as React from "react";
 
 import { Button } from "@/components/atoms/Button";
@@ -41,6 +42,6 @@ export const AccordionTrigger = ({
 };
 
 export type AccordionTriggerProps = {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 };

@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+
 import { Avatar } from "@/components/atoms/Avatar";
 import { Bubble } from "@/components/atoms/Bubble";
 import { Text } from "@/components/atoms/Text";
@@ -40,6 +42,6 @@ export const ChatMessage = ({
 
 type ChatMessageProps = {
   variant: "assistant" | "user" | "loading";
-  children?: React.ReactNode;
+  children?: ReactNode;
   blocks?: boolean;
 };

@@ -1,6 +1,7 @@
 "use client";
 
-import type * as React from "react";
+import type { ReactNode } from "react";
+
 import { cn } from "@/lib/utils";
 import { AccordionContext } from "./AccordionContext";
 
@@ -18,6 +19,6 @@ export const AccordionRoot = ({
 type AccordionRootProps = {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 };

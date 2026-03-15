@@ -1,4 +1,5 @@
 import { cva, type VariantProps } from "class-variance-authority";
+import type { HTMLAttributes } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -22,7 +23,7 @@ const textVariants = cva("", {
 
 const Text = ({ className, variant, as = "span", ...props }: TextProps) => {
   const classNameComputed = cn(textVariants({ variant, className }));
-  const rest = props as React.HTMLAttributes<HTMLElement>;
+  const rest = props as HTMLAttributes<HTMLElement>;
   switch (as) {
     case "h1":
       return <h1 className={classNameComputed} {...rest} />;
