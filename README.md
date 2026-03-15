@@ -2,6 +2,14 @@
 
 Next.js app for document and category management with a collapsible chat panel.
 
+### Here’s what it looks like
+
+The app includes a sidebar, categories panel, main content (strategy or document detail), and a collapsible chat panel.
+
+![App preview with Lighthouse insight](Screenshot%202026-03-15%20at%2005.44.44.png)
+
+Lighthouse scores (Performance, Accessibility, Best Practices, SEO at 100):
+
 ![Lighthouse audit: Performance, Accessibility, Best Practices, and SEO all at 100](Screenshot%202026-03-15%20at%2005.04.50.png)
 
 ## Stack

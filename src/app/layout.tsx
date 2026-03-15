@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import { prefetchDocumentCategories } from "@/lib/prefetch-document-categories";
 import { QueryProvider } from "@/providers/QueryProvider";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import "./globals.css";
 
@@ -43,6 +44,7 @@ const RootLayout = async ({ children }: RootLayoutProps) => {
         <QueryProvider dehydratedState={dehydratedState}>
           {children}
         </QueryProvider>
+        <SpeedInsights />
       </body>
     </html>
   );

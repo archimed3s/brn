@@ -6,8 +6,12 @@ import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import * as React from "react";
+
+const ReactQueryDevtools =
+  process.env.NODE_ENV === "development"
+    ? require("@tanstack/react-query-devtools").ReactQueryDevtools
+    : () => null;
 
 const makeQueryClient = () =>
   new QueryClient({
