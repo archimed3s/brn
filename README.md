@@ -2,6 +2,8 @@
 
 Next.js app for document and category management with a collapsible chat panel.
 
+![Lighthouse audit: Performance, Accessibility, Best Practices, and SEO all at 100](Screenshot%202026-03-15%20at%2005.04.50.png)
+
 ## Stack
 
 - **Framework**: Next.js 16 (App Router), React 19
